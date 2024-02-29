@@ -15,8 +15,13 @@
     "plugin:@stylistic/eslint-plugin/recommended-extends"
   ],
   "rules": {
-    "camelcase": "error",
+    "camelcase": "warn",
     "@stylistic/semi": "off",
+    "@stylistic/arrow-parens": ["error", "always"],
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      { "allowExpressions": true }
+    ],
     "import/no-unresolved": "off",
     "import/order": [
       "error",
@@ -25,6 +30,19 @@
         "alphabetize": {
           "order": "asc",
           "caseInsensitive": false
+        }
+      }
+    ],
+    "@stylistic/member-delimiter-style": [
+      "error",
+      {
+        "overrides": {
+          "interface": {
+            "multiline": {
+              "delimiter": "semi",
+              "requireLast": true
+            }
+          }
         }
       }
     ]

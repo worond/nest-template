@@ -1,14 +1,28 @@
 version: '3.9'
 name: nest-template
+
 services:
   database:
     image: postgres:15.2-alpine
     ports:
-      - ${DB_PORT}:5432
+      - ${DATABASE_PORT}:5432
     environment:
-      POSTGRES_USER: ${DB_USERNAME}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
     volumes:
       - postgres-data:/var/lib/postgresql/data
-    command: ["postgres", "-c", "log_statement=all"]
+    command: ['postgres', '-c', 'log_statement=all']
+  adminer:
+    image: adminer:4.8.1
+    environment:
+      ADMINER_DEFAULT_SERVER: postgresql
+      ADMINER_DEFAULT_DB_HOST: database
+      ADMINER_DEFAULT_DB_NAME: ${DATABASE_NAME}
+    ports:
+      - 8080:8080
+    logging:
+      driver: none
+volumes:
+  postgres-data:
+    name: postgres-data

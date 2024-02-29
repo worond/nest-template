@@ -14,8 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "strictPropertyInitialization": false,
     "paths": {
-      "@core/database": ["packages/database/src/index.ts"]
+      "@api/feature/user": ["packages/api/feature/user/src/index.ts"],
+      "@core/auth": ["packages/auth/src/index.ts"],
+      "@core/database": ["packages/database/src/index.ts"],
+      "@shared/dto": ["packages/shared/dto/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
