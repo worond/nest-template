@@ -1,4 +1,4 @@
-import { Public } from '@core/auth';
+import { UserCreateDto, UserUpdateDto, UserDto } from '@shared/dto';
 import { User } from '@core/database';
 import {
   Body,
@@ -17,30 +17,30 @@ export class UserController {
   constructor(private userService: UserService) {}
 
   @Post()
-  create(@Body() createUserDto: CreateUserDto): Promise<User> {
+  create(@Body() createUserDto: UserCreateDto): Promise<UserDto> {
     return this.userService.create(createUserDto);
   }
 
   @Get()
-  findAll(): Promise<User[]> {
+  findAll(): Promise<UserDto[]> {
     return this.userService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: number): Promise<User> {
+  findOne(@Param('id') id: number): Promise<UserDto> {
     return this.userService.findOne(id);
   }
 
   @Patch(':id')
   update(
     @Param('id') id: string,
-    @Body() updateUserDto: UpdateUserDto,
-  ): Promise<User> {
+    @Body() updateUserDto: UserUpdateDto,
+  ): Promise<UserDto> {
     return this.userService.update(+id, updateUserDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id: string): Promise<boolean> {
     return this.userService.remove(+id);
   }
 }

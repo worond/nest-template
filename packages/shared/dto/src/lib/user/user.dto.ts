@@ -1,8 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class Company {
+export class UserDto {
   @ApiProperty()
-  id: string;
+  id: number;
 
   @ApiProperty()
   email: string;
