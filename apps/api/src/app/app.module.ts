@@ -1,4 +1,4 @@
-import { UserModule } from '@api/feature/user';
+import { UserModule } from '@api/user';
 import { AuthModule } from '@core/auth';
 import { DatabaseModule } from '@core/database';
 import { Module } from '@nestjs/common';

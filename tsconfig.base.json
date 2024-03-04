@@ -16,9 +16,9 @@
     "baseUrl": ".",
     "strictPropertyInitialization": false,
     "paths": {
-      "@api/feature/user": ["packages/api/feature/user/src/index.ts"],
-      "@core/auth": ["packages/auth/src/index.ts"],
-      "@core/database": ["packages/database/src/index.ts"],
+      "@api/user": ["packages/api/user/src/index.ts"],
+      "@core/auth": ["packages/core/auth/src/index.ts"],
+      "@core/database": ["packages/core/database/src/index.ts"],
       "@shared/dto": ["packages/shared/dto/src/index.ts"]
     }
   },

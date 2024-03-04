@@ -1,5 +1,3 @@
-import { UserCreateDto, UserUpdateDto, UserDto } from '@shared/dto';
-import { User } from '@core/database';
 import {
   Body,
   Controller,
@@ -9,6 +7,7 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
+import { UserCreateDto, UserUpdateDto, UserDto } from '@shared/dto';
 
 import { UserService } from './user.service';
 

@@ -19,8 +19,9 @@ export class UserService {
     return this.userRepository.findOneByOrFail({ id });
   }
 
-  update(id: number, data: UserUpdateDto): Promise<User> {
-    return this.userRepository.findOneByOrFail({ id });
+  async update(id: number, data: UserUpdateDto): Promise<User> {
+    const user = await this.findOne(id);
+    return this.userRepository.save(this.userRepository.merge(user, data));
   }
 
   async remove(id: number): Promise<boolean> {

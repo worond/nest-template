@@ -1,9 +1,6 @@
 {
   "name": "@core/database",
   "version": "0.0.1",
-  "devDependencies": {
-    "eslint": "~8.48.0"
-  },
   "dependencies": {
     "@nestjs/common": "^10.0.2",
     "@nestjs/config": "^3.2.0",

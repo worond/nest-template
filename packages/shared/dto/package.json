@@ -1,10 +1,8 @@
 {
-  "name": "@api/feature/user",
+  "name": "@shared/dto",
   "version": "0.0.1",
   "dependencies": {
-    "@core/auth": "*",
-    "@core/database": "*",
-    "@nestjs/common": "^10.0.2",
+    "@nestjs/mapped-types": "^2.0.5",
     "tslib": "^2.3.0"
   },
   "type": "commonjs",

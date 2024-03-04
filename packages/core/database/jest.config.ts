@@ -1,14 +1,11 @@
 /* eslint-disable */
 export default {
-  displayName: {
-    color: 'blue',
-    name: 'database',
-  },
-  preset: '../../jest.preset.js',
+  displayName: 'database',
+  preset: '../../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/packages/database',
+  coverageDirectory: '../../../coverage/packages/core/database',
 };
